@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Events Radar — SWE / AI / Quant events for students</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="./"><span class="brand-mark">◉</span> Events Radar</a>
+    <nav class="tabs" id="tabs">
+      <button data-tab="upcoming" class="active">Upcoming</button>
+      <button data-tab="deadlines">Deadlines</button>
+      <button data-tab="hackathons">Hackathons</button>
+      <button data-tab="competitions">Competitions</button>
+      <button data-tab="programs">Programs</button>
+      <button data-tab="conferences">Conferences</button>
+      <button data-tab="saved">Saved <span class="pill" id="cnt-saved">0</span></button>
+      <button data-tab="registered">Registered <span class="pill" id="cnt-registered">0</span></button>
+    </nav>
+    <div class="top-right">
+      <span class="muted small" id="last-run">—</span>
+      <a class="btn" id="share-btn" href="#" title="Copy link to this view">Share view</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap layout">
+  <aside class="sidebar">
+    <div class="side-head">
+      <strong>Filters</strong>
+      <button class="link" id="reset-filters">Reset <span class="pill" id="active-filter-count">0</span></button>
+    </div>
+    <div class="search-box"><input id="q" type="search" placeholder="Search events, hosts…"></div>
+    <label class="check small" style="margin:10px 0 2px"><input type="checkbox" id="hide-approx"> Hide "typical timing" entries (no confirmed date)</label>
+    <div id="facets"></div>
+    <div class="side-foot muted small">
+      Hackathons from Devpost + MLH (US &amp; online). Firm programs, competitions and conferences from a curated list that is re-checked every run for dates and deadlines, plus GitHub program lists. Saved / Registered / Hidden live in your browser only.
+    </div>
+  </aside>
+
+  <section class="content">
+    <div class="page-head">
+      <h1 id="page-title">Upcoming events</h1>
+      <div class="muted" id="match-count">Loading…</div>
+    </div>
+    <div class="toolbar">
+      <div class="sort">
+        <span class="muted small">Sort</span>
+        <button data-sort="date" class="active">Soonest</button>
+        <button data-sort="deadline">Deadline</button>
+        <button data-sort="added">Recently added</button>
+      </div>
+      <span class="muted small legend"><span class="dot conf"></span> confirmed date &nbsp; <span class="dot approx"></span> typical timing</span>
+    </div>
+    <div id="list"></div>
+    <div class="load-more">
+      <span class="muted small" id="showing"></span>
+      <button class="btn" id="load-more">Load more</button>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap muted small foot">
+  Events Radar · companion to Quant Radar · <a id="repo-link" href="#">suggest an event on GitHub</a>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>
